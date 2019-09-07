@@ -51,5 +51,5 @@ def add_album(year, artist, genre, album):
         else:
             return HTTPError(400, "Incorrect release year. Please, write a year between 1900 and 2019")
     except ValueError as err:
-        return HTTPError(400, "'%s' is not the year, because it is not the integer. Please, type integer in this "
+        return HTTPError(400, "%s is not the year, because it is not the integer. Please, type the integer in this "
                               "attribute" % year)
