@@ -18,7 +18,7 @@ def find(artist):
         result = "%s released %s %s:<br><br>" % (artist, alb_count, alb_word) + "<br>".join(albums)
         return result
     else:
-        return HTTPError(400, "%s is not listed in the database" % artist)
+        return HTTPError(404, "%s is not listed in the database" % artist)
 
 
 @route("/albums", method="POST")
