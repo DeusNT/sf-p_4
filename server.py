@@ -30,7 +30,7 @@ def add():
     if not (None in [year, artist, genre, album]):
         return DB_manager.add_album(year, artist, genre, album)
     else:
-        return "Please, fill all attributes: year, artist, genre and album"
+        return HTTPError(400, "Please, fill all attributes: year, artist, genre and album")
 
 
 if __name__ == "__main__":

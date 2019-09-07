@@ -49,7 +49,7 @@ def add_album(year, artist, genre, album):
             session.commit()
             return "New album is successfully added to the database"
         else:
-            return "Incorrect album's release year. Please, write a year between 1900 and 2019"
+            return HTTPError(400, "Incorrect release year. Please, write a year between 1900 and 2019")
     except ValueError as err:
-        return "'%s' is not the year, because it is not the integer. Please, type integer in this attribute"\
-            % year
+        return HTTPError(400, "'%s' is not the year, because it is not the integer. Please, type integer in this "
+                              "attribute" % year)
